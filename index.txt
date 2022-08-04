@@ -1,0 +1,4 @@
+Hello World
+I'm TruongVNam
+It is my first time to work with VSC (Version Source Control)
+Thank to read this note
