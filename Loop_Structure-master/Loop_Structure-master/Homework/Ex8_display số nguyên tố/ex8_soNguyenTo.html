@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td {
+            width: 75%;
+            border: 1px solid black;
+            
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2" style="text-align: center;">Bạn cần in ra bao nhiêu số nguyên tố đầu tiên?</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="text" name="numbers" id="numbers" value="">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">-------------------------------------------------------------------------------</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">Kết quả in số nguyên tố</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="button" name="in_numbers_c1" id="in_numbers_c1" onclick="c1()" value="Cách 1: Viết lụi">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><p id="cach1"></p></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="button" name="in_numbers_c2" id="in_numbers_c2" onclick="c2()" value="Cách 2: White + if else">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><p id="cach2"></p></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="button" name="in_numbers_c3" id="in_numbers_c3" onclick="c3()" value="Cách 3: For đơn + if else">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><p id="cach3"></p></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="button" name="in_numbers_c4" id="in_numbers_c4" onclick="c4()" value="Cách 4: For lồng + if else">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><p id="cach4"></p></td>
+        </tr>
+
+    </table>
+
+</body>
+<script>
+// Cách 1 sử dụng vòng lặp for kết hợp với câu lệnh điều kiện if else - VIẾT LỤI KHÔNG VẼ FLOW CHART-----------------------------------------------------------------------
+
+function c1() {
+    let numbers = +document.getElementById("numbers").value;
+    let count, N, ketqua;
+    count = 0;
+    N = 2;
+    ketqua = "<p>";
+//Thân vòng lặp----------------------------------------------------------
+    for (i = 2; (i <= N && N == 2); i++) {
+        ketqua += N + ", ";
+        count++;
+        N++;
+    }
+
+    for (i = 2; (count <= numbers); ) {
+        let is_primeNum;
+        if (i < N && N%i == 0) { 
+            is_primeNum = false;
+            i = 2;
+            N++;
+        } 
+        else {
+            is_primeNum = true;
+            if (i == N && (is_primeNum)) {
+                count++;
+                if (count < numbers) {
+                    ketqua += N + ", ";
+                    N++;
+                    i = 2;
+                }
+                if (count == numbers) {
+                    ketqua += N;
+                    break;
+                }
+            }
+            else {
+                i++;
+            }
+        }
+    }
+//----------------------------------------------------------------------
+    ketqua += "</p>";
+    document.getElementById("cach1").innerHTML = ketqua;
+}
+
+// Cách 2 sử dụng vòng lặp while và cấu trúc điều kiện if else ----------------------------------------------------------------------------
+
+function c2() {
+    let numbers = +document.getElementById("numbers").value;
+    let count, N, ketqua;
+    count = 0;
+    N = 2;
+    ketqua = "<p>";
+//Thân vòng lặp--------------------------------
+
+    let i = 2;
+    while (count < numbers) {
+        while (N%i !== 0 && i < N) {
+            i++;
+        }
+        if (i == N) {
+            ketqua += N + ", ";
+            count++;
+            N++;
+            i = 2;
+        } else {
+             N++;
+            i = 2;
+        }
+    }
+
+
+//---------------------------------------------
+    ketqua += "</p>";
+    document.getElementById("cach2").innerHTML = ketqua;
+}
+
+// Cách 3 sử dụng vòng lặp do-while và cấu trúc điều kiện if else -------------------------------------------------------------------------
+
+function c3() {
+    let numbers = +document.getElementById("numbers").value;
+    let count, N, ketqua, i;
+    count = 0;
+    N = 2;
+    ketqua = "<p>";
+    i = 2;
+//Thân vòng lặp--------------------------------
+    for (i; (i <= N && count < numbers); ) {
+        // B1: Kiểm tra N chia hết cho i không, nếu không chia hết, thực hiện i++ 
+        for (i; N%i !== 0;) {
+            i++;
+        }
+        // B2: i chỉ ra khỏi vòng for khi N chia hết cho i (N chia hết cho i khi i < N và tại thời điểm i = N) => kiểm tra i = N hay không, 
+        // nếu i=N tức là N là số nguyên tố, nếu N chia hết cho i khi i < N tức N không phải số nguyên tố => thực hiện N++ và đưa i = 2 để
+        // khởi động vòng lặp với N mới.
+
+        if (i == N) {
+                ketqua += N + ", ";
+                count++;
+                N++;
+                i = 2;
+                continue;
+        } else {
+                N++;
+                i = 2;
+                continue;
+        }
+    }
+
+//---------------------------------------------
+    ketqua += "</p>";
+    document.getElementById("cach3").innerHTML = ketqua;
+}
+
+// Cách 4 sử dụng for lồng và cấu trúc if else -------------------------------------------------------------------------------------
+
+function c4() {
+    let numbers = +document.getElementById("numbers").value;
+    let count, N, ketqua, i;
+    count = 0;
+    N = 2;
+    ketqua = "<p>";
+    i = 2;
+//Thân vòng lặp--------------------------------
+    for (count; count < numbers; ) {
+            for (i; (i <= N && N%i !== 0); ) {    
+                i++;
+            }
+            if (i == N) {
+                ketqua += N + ", ";
+                count++;
+                N++;
+                i = 2;
+            }
+            else {
+                N++;
+                i = 2;
+            }
+    }
+
+//---------------------------------------------
+    ketqua += "</p>";
+    document.getElementById("cach4").innerHTML = ketqua;
+}
+
+</script>
+</html>

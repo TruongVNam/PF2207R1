@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: large;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <td>Chọn kiểu tam giác vuông muốn vẽ:</td>
+        </tr>
+        <tr>
+            <td>Chọn vị trí góc vuông:</td>
+            <td>
+                <select name="" id="vitrigocvuong">
+                    <option value="text-align: left;'>">Góc vuông bên trái</option>
+                    <option value="text-align: right;'>">Góc vuông bên phải</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Chọn vị trí đỉnh tam giác:</td>
+            <td>
+                <select name="" id="huongcuadinh">
+                    <option value="1">Hướng lên</option>
+                    <option value="2">Hướng xuống</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="draws()" value="Vẽ tam giác vuông"></td>
+        </tr>
+
+    </table>
+</div>
+<div id="result"></div>
+</body>
+<script>
+function draws() {
+    let goc = document.getElementById("vitrigocvuong").value;
+    let huong = +document.getElementById("huongcuadinh").value;
+    let tamgiac = "<div style='width:60px; margin: 10px;" + goc + "<p>";
+    let vesao = "";
+    for (i = 1; i <= 6;) {
+        if (huong === 1) {
+            vesao += "*";
+            tamgiac += vesao + "</p>";
+            i++;
+        }
+        if (huong === 2) {
+            vesao += "******";
+            tamgiac += vesao.substr(0, 7-i) + "</p>";
+            i++;
+        }
+
+    }
+
+    tamgiac += "</div>";
+    document.getElementById("result").innerHTML = tamgiac;
+}
+</script>
+</html>

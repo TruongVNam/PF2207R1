@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    input {
+        border: 3px solid;
+        border-color: brown;
+        border-radius: 3px;
+    }
+    label {
+        text-align: justify;
+        text-align: center;
+        padding-bottom: 0px;
+    }
+    td {
+        width: 175px;
+        padding-left: 30px;
+        text-align: center;
+    }
+    select {
+        width: 170px;
+        border: 3px solid;
+        border-color: brown;
+        border-radius: 3px;
+    }
+    </style>
+</head>
+<body>
+<form action="">
+    <table>
+        <tr>
+            <th colspan="4">CONVERT MONEY</th>
+        </tr>
+        <tr class="row1">
+            <td><label for="amount">Amount</label></td>
+            <td><label for="">From Currency</label></td>
+            <td><label for="">To Currency</label></td>
+            <td></td>
+        </tr>
+        <tr class="row2">
+            <td>
+                <input type="text" id="amount" value="">
+            </td>
+            <td>
+                <select name="frommoney" id="frommoney">
+                    <option value="1">VND</option>
+                    <option value="23260">USD</option>
+                    <option value="22725.53">EUR</option>
+                    <option value="2910.05">HKD</option>
+                    <option value="166.47">JPY</option>
+                    <option value="26973.87">GBP</option>
+                    <option value="23659.10">CHF</option>
+                </select>
+            </td>
+            <td>
+                <select name="tomoney" id="tomoney">
+                    <option value="1.0">VND</option>
+                    <option value="23260.0">USD</option>
+                    <option value="22725.53">EUR</option>
+                    <option value="2910.05">HKD</option>
+                    <option value="166.47">JPY</option>
+                    <option value="26973.87">GBP</option>
+                    <option value="23659.10">CHF</option>
+                </select>
+            </td>
+            <td>
+                <input type="button" name="convert" value="Convert" onclick="convertMoney()">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" style="color: blue; text-align: left;"><p>Result: <span id="displayconvertmoney"></span></p></td>
+        </tr>
+
+
+    </table>
+</form>
+</body>
+<script>
+function convertMoney() {
+    let amount = +document.getElementById("amount").value;
+    let tomoney = document.getElementById("tomoney");
+    let frommoney = document.getElementById("frommoney");
+    
+        console.log(tomoney.n);
+
+    let convert_money = amount * (+document.getElementById("frommoney").value) / (+document.getElementById("tomoney").value)  ;
+    //let convert_money = amount*frommoney/tomoney; 
+
+        console.log(convert_money);
+
+        document.getElementById("displayconvertmoney").innerText = convert_money;
+}
+</script>
+</html>

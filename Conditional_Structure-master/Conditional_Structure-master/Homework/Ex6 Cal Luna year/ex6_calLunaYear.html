@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 3px solid black;
+            border-collapse: collapse;
+        }
+        tr, th, td{
+            border: 0px solid black;
+            border-collapse: collapse;
+            padding: 5px 5px 5px 5px;
+        }
+        th, td{
+            height: 30px;
+        }
+        input{
+            height: 25px;
+            border: 3px solid black;
+            border-radius: 3px;
+        }
+        p{
+            height: 25px;
+            border: 3px solid black;
+            border-radius: 3px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th colspan="2">TÍNH NĂM ÂM LỊCH</th>
+        </tr>
+        <tr>
+            <td><Label for="inpyear">Nhập năm dương lịch:</Label></td>
+            <td>
+                <input type="text" name="year" id="inpyear" placeholder="Nhập năm vào đây" value="">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <input type="button" style="border-radius: 3px;" name="callunayear" id="callunayear" onclick="convertLunayear()" value="Tính Năm Âm Lịch">
+            </td>
+        </tr>
+        </tr>
+        <tr>
+            <td>Năm Âm lịch tương ứng với <span id="disyear">.....</span> là:</td>
+            <td><p style="text-align: center; color: red;"><span id="lunayear"></span></p></td>
+        </tr>
+    </table>
+</div>
+</body>
+<script>
+function convertLunayear() {
+
+    let year = +document.getElementById("inpyear").value;
+    let can = year % 10;
+    let chi = year % 12;
+    let amlich = "";
+
+    switch (can) {
+        case 0:
+            amlich += "Canh ";
+            break;
+        case 1:
+            amlich += "Tân ";
+            break;
+        case 2:
+            amlich += "Nhâm ";
+            break;
+        case 3:
+            amlich += "Quý ";
+            break;
+        case 4:
+            amlich += "Giáp ";
+            break;
+        case 5:
+            amlich += "Ất ";
+            break;
+        case 6:
+            amlich += "Bính ";
+            break;
+        case 7:
+            amlich += "Đinh ";
+            break;
+        case 8:
+            amlich += "Mậu ";
+            break;
+        case 9:
+            amlich += "Kỷ ";
+            break;
+    }
+
+    switch (chi) {
+        case 0:
+            amlich += "Thân";
+            break;
+        case 1:
+            amlich += "Dậu";
+            break;
+        case 2:
+            amlich += "Tuất";
+            break;
+        case 3:
+            amlich += "Hợi";
+            break;
+        case 4:
+            amlich += "Tý";
+            break;
+        case 5:
+            amlich += "Sửu";
+            break;
+        case 6:
+            amlich += "Dần";
+            break;
+        case 7:
+            amlich += "Mẹo";
+            break;
+        case 8:
+            amlich += "Thìn";
+            break;
+        case 9:
+            amlich += "Tỵ";
+            break;
+        case 10:
+            amlich += "Ngọ";
+            break;
+        case 11:
+            amlich += "Mùi";
+            break;
+    }
+
+    document.getElementById("disyear").innerHTML = year;
+    document.getElementById("lunayear").innerHTML = amlich;
+}
+</script>
+</html>

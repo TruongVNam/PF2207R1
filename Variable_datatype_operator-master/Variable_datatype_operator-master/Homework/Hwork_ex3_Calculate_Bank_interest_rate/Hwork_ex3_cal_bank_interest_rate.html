@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 510px;
+            background-color: blue;
+            padding: 10px;
+        }
+        table{
+            width: 500px;
+            background-color: blanchedalmond;
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        th, tr, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        p{
+            margin: 10px;
+        }
+        input{
+            margin: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <th colspan="2"><p>ENTER THE MONEY, RATE AND NUMBER OF YEAR</p></th>
+            <tr>
+                <td><p>Amount Money ($):</p></td>
+                <td>
+                    <input type="text" id="inputmoney" oninput="caltotalmoney()" value="">
+                </td>
+            </tr>
+            <tr>
+                <td><p>Bank Interest Rate (%):</p></td>
+                <td>
+                    <input type="text" id="inputrate" oninput="caltotalmoney()" value="">
+                </td>
+            </tr>
+            <tr>
+                <td><p>Number Of Year:</p></td>
+                <td>
+                    <input type="text" id="inputyear" oninput="caltotalmoney()" value="">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><P style="color: red; text-align: center;">RESULT</P></td>
+            </tr>
+            <tr>
+                <td><p>Total Money (Principal + Interest) ($):</p></td>
+                <td><P id="dis_result"></P></td>    
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    function caltotalmoney(){
+        let in_money = +document.getElementById("inputmoney").value;
+        let in_rate = +document.getElementById("inputrate").value;
+        let in_num_year = +document.getElementById("inputyear").value;
+        let out_totalmoney = in_money * (1 + in_rate * in_num_year/100);
+        console.log(out_totalmoney);
+        document.getElementById("dis_result").innerHTML = "<p>"+out_totalmoney+"</p>";
+    }
+</script>
+</html>

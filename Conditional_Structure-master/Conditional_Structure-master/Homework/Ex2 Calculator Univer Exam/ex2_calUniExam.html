@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="">
+            <table>
+                <th colspan="2"><h1>Tính điểm ĐH khối D</h1></th>
+                <tr>
+                    <td><label for="toan">Môn Toán</label></td>
+                    <td><input type="text" name="toan" id="toan" value=""></td>
+                </tr>
+                <tr>
+                    <td><label for="van">Môn Văn</label></td>
+                    <td><input type="text" name="van" id="van" value=""></td>
+                </tr>
+                <tr>
+                    <td><label for="anh">Môn Anh</label></td>
+                    <td><input type="text" name="anh" id="anh" value=""></td>
+                </tr>
+                <tr>
+                    <td><label for="">Khu vực</label></td>
+                    <td>
+                        <select name="khuvuc" id="khuvuc">
+                            <option value="0.75">KV1</option>
+                            <option value="0.5">KV2</option>
+                            <option value="0.25">KV2-NT</option>
+                            <option value="0">KV3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="tinhDiemThi()" value="Tính điểm"></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+        <h5 style="color: red;"><span id="ketquathiDH"></span></h5>
+    </div>
+</body>
+<script>
+function tinhDiemThi() {
+    let diemThi = (+document.getElementById("toan").value) + (+document.getElementById("van").value) + (+document.getElementById("anh").value);
+    console.log(diemThi);
+    let diemKV = +document.getElementById("khuvuc").value
+    console.log(diemKV);
+    let tongDiem = diemThi + diemKV;
+    document.getElementById("ketquathiDH").innerHTML = "Tổng điểm ĐH khối D của bạn là: " + tongDiem;
+
+    
+}
+</script>
+</html>

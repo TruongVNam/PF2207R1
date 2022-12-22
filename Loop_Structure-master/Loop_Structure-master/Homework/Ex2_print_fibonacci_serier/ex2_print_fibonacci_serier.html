@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <table style="border: 1px solid black;"></table> -->
+</body>
+<script>
+
+
+// Tạo một hàm tính số fibonacci tại vị trí đã chọn. Vd tại vị trí n = 35 thì số fibonacci = 5;
+
+    var fibonacci_N = function fibo_N (m) {
+    let a, b, fibo_at_i;
+                a = 0;
+                b = 1;
+                fibo_at_i = 0;
+            for (i = 1; i <= m; i++) {
+                a = b;
+                b = fibo_at_i;
+                fibo_at_i = a + b;
+            }
+    return fibo_at_i;
+    }   
+
+// viết chương trình in ra số phần tử trong dãy fibonacci theo yêu cầu sử dụng hàm tính số Fibonacci đã viết phía trên.
+
+let n = parseInt(prompt("Nhập số phần tử của dãy Fibonacci muốn in?"));
+    for (k = 1; k <= n; k++) {
+        document.write("Số Fibonacci thứ " + k + " có giá trị là: " + fibonacci_N(k) + "<br>");
+    }
+
+
+</script>
+</html>

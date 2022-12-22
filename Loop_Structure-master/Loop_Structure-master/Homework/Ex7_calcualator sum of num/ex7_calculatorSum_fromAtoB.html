@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    table {
+        width: 90%;
+        height: 200px;
+    }
+    table, tr, td {
+        border: 3px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+   </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">Nhập số tự nhiên a, b để tính tổng các số tự nhiên trong đoạn từ a đến b</td>
+        </tr>
+        <tr>
+            <td><label for="inputA">Nhập số a</label></td>
+            <td>
+                <input type="text" id="inputA" placeholder="Enter number a:" value="">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="inputB">Nhập số b</label></td>
+            <td>
+                <input type="text" id="inputB" placeholder="Enter number b:" value="">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" onclick="sumAtoB()" value="Tổng các số tự nhiên trong đoạn từ a đến b"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><p id="result"></p></td>
+        </tr>
+    </table>
+    
+</body>
+<script>
+function sumAtoB() {
+    let numA = +document.getElementById("inputA").value;
+    let numB = +document.getElementById("inputB").value;
+    let sum_AtoB = 0;
+    for (numA; ; ) {
+        sum_AtoB += numA;
+        if (numA == numB) {
+            break;
+        } else {
+            if (numA > numB) {
+                numA--;
+            } else {
+                numA++;
+            }
+        }
+
+    }
+    document.getElementById("result").innerHTML = "<p>" + sum_AtoB + "</p>"
+}
+</script>
+</html>

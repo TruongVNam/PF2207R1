@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        tr, td {
+            height: 30px;
+            width: 100px;
+            border: 0px solid black;
+            border-collapse: collapse;
+            padding: 10px 0px 0px 0px;
+        }
+        input {
+            height: 30px;
+            width: 200px;
+            border: 2px solid blue;
+            border-radius: 3px;
+        }
+        button {
+            height: 30px;
+            width: 208px;
+            border: 2px solid red;
+            border-radius: 3px;
+        }
+        p {
+            height: 30px;
+            width: 205px;
+            border: 2px solid blue;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><label for="inputnum">Nhập số:</label></td>
+            <td>
+                <input type="text" name="inputnum" id="inputnum" placeholder="Nhập vào một số nguyên dương:" value="">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="convert()">Convert to Reverse Number</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Kết quả:</td>
+            <td><p id="display_result"></p></td>
+        </tr>
+    </table>
+    
+</body>
+<script>
+    //Input số nguyên dương từ người dùng nhập
+    function convert () {
+
+    let inputnum = document.getElementById("inputnum").value;
+    let inputnum_split = inputnum.split("");
+    let n = inputnum_split.length;
+        console.log(inputnum_split);
+        console.log(n);
+    let result_split = [];
+    let i = 1;
+    while (i <= inputnum_split.length) {
+        result_split += inputnum_split[n-i]
+        console.log(result_split);
+        console.log(i);
+        i++;
+    }
+
+    document.getElementById("display_result").innerHTML = "<p>" + result_split + "</p>";
+    
+    }
+
+</script>
+</html>

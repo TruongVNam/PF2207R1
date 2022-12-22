@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="predictNumGame()">Chơi</button>
+</body>
+<script>
+function predictNumGame () {
+
+    var minNum_predict = +prompt("Giá trị nhỏ nhất dự đoán (Min): ");
+    var maxNum_predict = +prompt("Giá trị lớn nhất dự đoán (Max): ");
+    if (maxNum_predict > minNum_predict) {
+        var randomNum = Math.floor(Math.random() * (maxNum_predict - minNum_predict + 1) ) + minNum_predict;
+    }
+    else { 
+        if (maxNum_predict < minNum_predict) {
+            var randomNum = Math.floor(Math.random() * (minNum_predict - maxNum_predict + 1) ) + maxNum_predict;
+        }    
+        else {
+            var randomNum = minNum_predict;
+        }
+    }
+    let count = 0;
+    do {
+        let n;
+            switch (count) {
+                case 0:
+                        n = parseInt(prompt("Bạn hãy đoán một số trong khoảng vừa chọn:"));
+                        count++;
+                        break;
+                case 1:
+                        n = parseInt(prompt("Bạn còn " + (3 - count) + " lần đoán kể cả lần này, hãy thử đoán lại:"));
+                        count++;
+                        break;
+                case 2:
+                        n = parseInt(prompt("Đây là lần đoán cuối cùng, cố lên:"));
+                        count++;
+                        break;
+            }
+        if (n == randomNum) {
+            alert("Bạn đã thắng - Xin chúc mừng");
+            break
+        }
+        if (count == 3) {
+            continue;
+        }
+        else {
+            if (n > randomNum) {
+                alert("Bạn đoán giảm xuống");
+            }
+            else {
+                alert("Bạn đoán tăng lên");
+            }
+        }
+    } while (count < 3);
+    if (count == 3) {
+        alert("Bạn đã thua game này rồi");
+    }
+}
+</script>
+</html>

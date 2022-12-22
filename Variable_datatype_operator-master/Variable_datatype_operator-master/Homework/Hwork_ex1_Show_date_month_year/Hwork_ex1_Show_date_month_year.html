@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div{
+        width: 400px;
+        background-color: blue;
+        border: 10px slateblue;
+        padding: 10px;
+        margin: 10px;
+    }
+    table{
+        width: 400px;
+        background-color: brown;
+        border: 5px rgb(255, 37, 3);
+        border-collapse: collapse;
+        font-weight: bold;
+        padding: auto;
+        margin: auto;
+    }
+    th, tr, td {
+        height: 30px;
+        border: 1px rgb(255, 37, 3);
+        border-collapse: collapse;
+    }
+    td{
+        width: 90px;
+    }
+    p{ 
+        font-weight: bold;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+    }
+    .alignright{
+        text-align: right;
+    }
+    .alignjustify{
+        text-align: justify;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <table id="table1">
+            <th colspan="3"><p>NHẬP NGÀY THÁNG NĂM SINH CỦA BẠN</p></th>
+            <tr>
+                <td class="alignright"><label for="yearborn"><p>Năm:</p></label></td>
+                <td><input type="text" name="yearborn" id="yearborn" placeholder="Nhập năm sinh của bạn"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="alignright"><label for="monthborn"><p>Tháng:</p></label></td>
+                <td><input type="text" name="monthborn" id="monthborn" placeholder="Nhập tháng sinh của bạn"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="alignright"><label for="dateborn"><p>Ngày:</p></label></td>
+                <td><input type="text" name="dateborn" id="dateborn" placeholder="Nhập ngày sinh của bạn"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" onclick="showybirthday()">Click Me!</button>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="alignright"><p>NGÀY SINH CỦA BẠN LÀ</p></td>
+                <td class="alignright"><p id="displaytime"></p></td>
+            </tr>
+        </table>
+</div>
+</body>
+</html>
+<script>
+    function showybirthday() {
+        let year_ybt = document.getElementById("yearborn").value;
+        let month_ybth = document.getElementById("monthborn").value;
+        let date_ybth = document.getElementById("dateborn").value;
+        //let showall = date_ybth+"-"+month_ybth+"-"+year_ybt
+        
+        console.log (date_ybth);
+        console.log(month_ybth);
+        console.log(year_ybt);
+        //document.getElementById("table1").innerHTML = showall
+        document.getElementById("displaytime").innerHTML = "<p>"+date_ybth+"-"+month_ybth+"-"+year_ybt+"</p>"
+    }
+    
+</script>
+<!-- <script src="Hwork_ex1_Show_date_month_year.js"></script> -->

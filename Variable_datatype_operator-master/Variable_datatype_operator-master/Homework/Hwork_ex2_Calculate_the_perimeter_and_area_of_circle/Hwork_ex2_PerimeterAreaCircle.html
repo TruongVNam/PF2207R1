@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+table{
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: blueviolet;
+    margin: auto;
+}
+th, tr, td{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+td{
+    width: 160px;
+    padding: 3px;
+}
+p{
+    font-weight: bold;
+    color: white;
+}
+</style>
+
+</head>
+
+<body>
+
+    <div>
+
+        <table>
+            <th><P>THÔNG SỐ</P></th>
+            <th><p>NHẬP GIÁ TRỊ</p></th>
+            <tr>
+                <td><p>Số đo bán kính (r):</p></td>
+                <td>
+                    <input type="text" id="inputR"  placeholder="Enter the r" oninput="calPeriArea()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center; background-color: white;"><p style="color: red;">RESULT</p></td>
+            </tr>
+            <tr>
+                <td><p>The Perimeter is:</p></td>
+                <td><p id="disPeri"></p></td>
+            </tr>
+            <tr>
+                <td><p>The Area of Circle is:</p></td>
+                <td><p id="disArea"></p></td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+
+<script>
+    function calPeriArea () {
+        let radius = +document.getElementById("inputR").value;
+        let perimeterCircle = 2 * radius * Math.PI;
+        let areaCircle = Math.pow(radius,2) * Math.PI;
+
+            document.getElementById("disPeri").innerHTML = "<p>"+perimeterCircle.toFixed(4)+"</p>";
+            document.getElementById("disArea").innerHTML = "<p>"+areaCircle.toFixed(4)+"</p>"
+
+
+
+    }
+
+</script>
+
+</html>

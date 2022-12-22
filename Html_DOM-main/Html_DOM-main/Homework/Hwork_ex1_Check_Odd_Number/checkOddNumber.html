@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+button{
+    margin-left: 10px;
+}
+h5{
+    margin: 0 0 5px 0;
+}
+</style>
+</head>
+<body>
+    <h5>Nhập số</h5>
+    <input type="text" id="number" value="">
+    <button type="button" onclick="checkOddNum()">Kiểm tra</button>
+</body>
+<Script>
+function checkOddNum () {
+    let check_num = +document.getElementById("number").value;
+    let num=check_num%2;
+    console.log(check_num);
+
+    if (num == 0) {
+        alert(check_num + " là một số chẵn");
+}
+    else{
+        alert(check_num + " là một số lẻ");
+    }
+}
+</Script>
+</html>

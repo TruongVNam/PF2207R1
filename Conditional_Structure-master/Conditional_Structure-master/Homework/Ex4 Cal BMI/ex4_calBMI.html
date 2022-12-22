@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1><span id="display"></span></h1>
+</body>
+<script>
+    let can_nang = +prompt("Nhập cân nặng (kg)", 0);
+    let chieu_cao = +prompt("Nhập chiều cao (m)", 0);
+    let bmi = can_nang / Math.pow(chieu_cao, 2);
+
+    if (40 <= bmi) {
+        document.getElementById("display").innerHTML = "Béo phì độ III";
+    }
+    else {
+        if (35 <= bmi ) {
+            document.getElementById("display").innerHTML = "Béo phì độ II";
+        }
+        else {
+            if (30 <= bmi) {
+                document.getElementById("display").innerHTML = "Béo phì độ I";
+            }
+            else {
+                if (25 <= bmi) {
+                    document.getElementById("display").innerHTML = "Thừa cân";
+                }
+                else {
+                    if (18.5 <= bmi) {
+                        document.getElementById("display").innerHTML = "Bình thường";
+                    }
+                    else {
+                        if (17 <= bmi) {
+                            document.getElementById("display").innerHTML = "Gầy độ I";
+                        }
+                        else {
+                            if (16 <= bmi) {
+                                document.getElementById("display").innerHTML = "Gây độ II";
+                            }
+                            else {
+                                document.getElementById("display").innerHTML = "Gầy độ III";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+</script>
+</html>

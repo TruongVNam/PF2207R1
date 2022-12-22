@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+table{
+    width: 90%;
+    background-color: rgb(209, 209, 209);
+    
+    margin: 10px;
+    margin: auto;
+}
+#table_in{
+    border: 5px solid rgb(239, 127, 8);
+}
+#table_out{
+    margin-top: 10px;
+    border: 5px solid rgb(197, 12, 55);
+}
+p{
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(17, 17, 189);
+}
+th, tr, td{
+    vertical-align: middle;
+    text-align: left;
+
+}
+td{
+    padding: 0px 5px 0px 5px;
+}
+.alignright{
+    text-align: right;
+}
+</style>
+<body>
+    <div>
+        <table id="table_in">
+            <th colspan="2" style="text-align: center;"><p>Marilyn Monroe Have To Send This Letter To This Man</p></th>
+            <tr>
+                <td class="alignright"><p>Man'name:</p></td>
+                <td>
+                    <input type="text" id="name" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="alignright"><p>Man'adress:</p></td>
+                <td>
+                    <input type="text" id="adress" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="alignright"><p>Time to send this letter:</p></td>
+                <td>
+                    <input type="date" id="date" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="alignright">
+                    <button type="button" onclick="printletter()">Preview Letter</button>
+                </td>
+                <td></td>
+            </tr>
+
+        </table>
+        <table id="table_out">
+            <tr>
+                <td><p><span id="insertManName">........</span> thương nhớ,</p></td>
+            </tr>
+            <tr>
+                <td><p>Em không biết phải nói sao để anh hiểu rằng, em nhớ anh thật nhiều. Em yêu anh đến khi trái tim này tan thành nghìn mảnh. Tất cả những gì em yêu thương, em khát khao và cần đến, chính là anh, mãi mãi về sau. Em chỉ muốn ở bên anh, và anh yêu hỡi, em sẽ trở thành người phụ nữ như anh mong muốn.</p></td>
+            </tr>
+            <tr>
+                <td><p>Có phải em thật tệ hại, khi cứ nghĩ đến anh thật nhiều, thật lâu và nhất là mỗi khi đêm xuống? Em hứa sẽ sẽ cố gắng triệu triệu lần hơn thế. Nhưng hơn tất cả, em chỉ mong một ngày nào đó, anh sẽ tự hào về em, như tự hào về vợ của anh, và mẹ của các con anh (ít nhất là 2 nhé, em vừa mới quyết định đấy!). Em nhớ thật nhiều cảm giác mỗi đêm anh ôm em và ru em ngủ trong vòng tay. Đêm nay, em chỉ muốn được gần bên anh… và anh biết không, trái tim em đang đau đớn đến nhường nào.</p></td>
+            </tr>
+            <tr>
+                <td><p>Anh yêu thương, đừng bao giờ rời xa em nữa nhé. Yêu anh rất nhiều.</p></td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <span id="insertManAdress">........</span>, ngày <span id="insertDay">........</span> tháng <span id="insertMonth">........</span> năm <span id="insertYear">........</span>.”
+                    </p>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+<script>
+    function printletter () {
+        let man_name = document.getElementById("name").value;
+        let man_adress = document.getElementById("adress").value;
+        let date_send = document.getElementById("date").value;
+        let table_in = document.getElementById("table_in");
+        let table_out = document.getElementById("table_out").value;
+
+        console.log(man_name);
+        console.log(man_adress);
+        console.log(date_send);
+
+        split_datesend = date_send.split("-")
+
+        console.log(split_datesend);
+
+        document.getElementById("insertManName").innerText = man_name;
+        document.getElementById("insertManAdress").innerText = man_adress;
+        document.getElementById("insertDay").innerText = split_datesend[2]
+        document.getElementById("insertMonth").innerText = split_datesend[1]
+        document.getElementById("insertYear").innerText = split_datesend[0]
+
+
+
+
+    }
+
+</script>
+</html>

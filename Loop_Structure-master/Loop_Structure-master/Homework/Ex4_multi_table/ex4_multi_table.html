@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let bangcuuchuong = "<table border=' 1px solid black'>";
+    for (i = 1; i <= 9; i++) {
+        bangcuuchuong += "<tr>";
+            for (j = 2; j <= 9; j++) {
+                bangcuuchuong += "<td>" + j + "x" + i + "=" + j*i + "</td>";
+            }
+        bangcuuchuong += "</tr>";
+    }
+    bangcuuchuong += "</table>";
+    document.write(bangcuuchuong);
+
+    document.write("<hr width=100% >")
+
+    let bangcuuchuong1 = "<table border=' 1px solid red'>";
+    let m = 1;
+    let n = 2;
+    while (m <= 9) {
+        bangcuuchuong1 += "<tr>";
+        while (n <= 9) {
+            bangcuuchuong1 += "<td>" + n + "x" + m + "=" + n*m + "</td>";
+            n++;
+        }
+        bangcuuchuong1 += "</tr>";
+        n = 2;
+        m++;
+    }
+    bangcuuchuong1 += "</table>";
+    document.write(bangcuuchuong1);
+
+    document.write("<hr width=100% >")
+
+    let bangcuuchuong2 = "<table border=' 1px solid red'>";
+    let l = 1;
+    let k = 2;
+    do {
+        bangcuuchuong2 += "<tr>";
+        do {
+            bangcuuchuong2 += "<td>" + k + "x" + l + "=" + k*l + "</td>";
+            k++;
+        } while (k <= 9);
+        bangcuuchuong2 += "</tr>";
+        k = 2;
+        l++;
+    } while (l <= 9);
+    bangcuuchuong2 += "</table>";
+    document.write(bangcuuchuong2);
+    
+</script>
+</html>

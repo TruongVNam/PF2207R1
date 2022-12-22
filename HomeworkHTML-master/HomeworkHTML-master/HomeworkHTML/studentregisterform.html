@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        width: 35%;
+        table-layout: fixed;
+        background-color: #fffda9;
+    }
+    table, th, td {
+        border: 0 solid black;
+        border-collapse: collapse;
+    }
+    h1{
+        background-color: #d4fdd6;
+        color: #ffffff;
+    }
+    .alignleft{
+        text-align: left;
+        color: #1b35aa;
+        size: 100px;
+        font-family: calibri;
+    }
+    td{
+        padding: 5px;
+    }
+    th{
+        text-align: left;
+    }
+</style>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <th colspan="4"><h1><span style="color:#0e3cfe;">ĐĂNG KÝ HỌC VIÊN</span></h1></th>
+            </tr>
+
+            <tr>
+                <td class="alignleft">Họ và tên</td>
+                <td>
+                    <input type="text" name="name" size="30px">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="alignleft">Ngày sinh</td>
+                <td>
+                    <input type="date" name="birthday">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="alignleft">Giới tính</td>
+                <td colspan="3">
+                    <input type="checkbox" name="gender" value="man">Nam
+                    <input type="checkbox" name="gender" value="woman">Nữ
+                </td>
+            </tr>
+
+            <tr>
+                <td class="alignleft">Địa chỉ</td>
+                <td>
+                    <textarea name="adress" id="" cols="25" rows="3"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="alignleft">Lớp</td>
+                <td>
+                    <select name="yClass">
+                        <option value="0">--- Chọn lớp ---</option>
+                        <option value="1">Code lv1</option>
+                        <option value="2">Code lv2</option>
+                        <option value="3">Code lv3</option>
+                        <option value="4">Code lv4</option>
+                        <option value="5">Code lv5</option>
+                        <option value="6">Code lv6</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="alignleft">Email</td>
+                <td>
+                    <input type="text" name="email">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="alignleft">Điện thoại</td>
+                <td>
+                    <input type="text" name="phone">
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <button type="submit">Đăng ký</button> <!-- <input type="submit" name="Submitform" value="Đăng ký"/> -->
+                    <button type="reset">Nhập lại</button> <!-- <input type="reset" name="Resetform" value="Nhập lại"> -->
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>

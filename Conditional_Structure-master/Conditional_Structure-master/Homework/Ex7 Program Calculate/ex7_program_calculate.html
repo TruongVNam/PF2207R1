@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .father {
+        width: 415px;
+        border: 1px solid black;
+        border-radius: 3px;
+        padding: 3px;
+        border: 3px solid black;
+
+    }
+    #display {
+        width: 409px;
+        height: 30px;
+        border: 3px solid black;
+        border-radius: 3px;
+        margin:;
+    }
+    .btn {
+        display: grid;
+        grid-template-columns: 105px 105px 105px 105px;
+        /* grid-template-columns: repeat(1fr, 3fr); */
+
+    }
+    .btnchild {
+        width: 100px;
+        height: 30px;
+        border: 3px solid black;
+        border-radius: 3px;
+        margin-top: 3px;
+        padding-top: auto;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: blue;
+    }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div id="display"></div>
+        <div class="btn">
+            <input class="btnchild" type="button" name="1" value="1" onclick="num1()">
+            <input class="btnchild" type="button" name="2" value="2" onclick="num2()">
+            <input class="btnchild" type="button" name="3" value="3" onclick="num3()">
+            <input class="btnchild" type="button" name="add" value="+" onclick="add()">
+            <input class="btnchild" type="button" name="4" value="4" onclick="num4()">
+            <input class="btnchild" type="button" name="5" value="5" onclick="num5()">
+            <input class="btnchild" type="button" name="6" value="6" onclick="num6()">
+            <input class="btnchild" type="button" name="sub" value="-" onclick="sub()">
+            <input class="btnchild" type="button" name="7" value="7" onclick="num7()">
+            <input class="btnchild" type="button" name="8" value="8" onclick="num8()">
+            <input class="btnchild" type="button" name="9" value="9" onclick="num9()">
+            <input class="btnchild" type="button" name="multi" value="X" onclick="multi()">
+            <input class="btnchild" type="button" name="clean" value="C" onclick="clean()">
+            <input class="btnchild" type="button" name="0" value="0" onclick="num0()">
+            <input class="btnchild" type="button" name="equa" value="=" onclick="equa()">
+            <input class="btnchild" type="button" name="divi" value="/" onclick="divi()">
+        </div>
+    </div>
+</body>
+<Script>
+
+    var displayOut = "";
+    var firstNum = "";
+    var secondNum = "";
+    var operator = "";
+
+// các phím chức năng - phím toán tử
+
+function multi () {
+        operator = "*";
+    let displayOut = document.getElementById("display");
+        displayOut.innerHTML += "*";
+        console.log(operator);
+}
+
+// function divi () {
+//         operator = "/";
+//     let displayOut = document.getElementById("display");
+//         displayOut.innerHTML += "/";
+// }
+
+// function add () {
+//         operator = "+";
+//     let displayOut = document.getElementById("display");
+//         displayOut.innerHTML += "+";
+// }
+
+// function sub () {
+//         operator = "-";
+//     let displayOut = document.getElementById("display");
+//         displayOut.innerHTML += "-";
+// }
+
+
+// // Các phím toán hạng
+
+// function num1 () {
+//     let displayOut = document.getElementById("display");
+//     if (operator === "") {
+//             console.log(operator);
+//             displayOut.innerHTML += 1;
+//             firstNum += 1;
+//     }
+//     else {
+//             displayOut.innerHTML += 1;
+//             secondNum += 1;
+//     } 
+//     console.log(firstNum);
+// }
+//     console.log(firstNum);
+
+// // function num2 () {
+// //     let displayOut = document.getElementById("display");
+// //     if (operator == "") {
+// //             displayOut.innerHTML += 2;
+// //             firstNum += 2;
+// //     }
+// //     else {
+// //             displayOut.innerHTML += 2;
+// //             secondNum += 2;
+// //     } 
+// // }
+// // function num3 () {
+// //     let displayOut = document.getElementById("display");
+// //     if (operator == "") {
+// //             displayOut.innerHTML += 3;
+// //             firstNum += 3;
+// //     }
+// //     else {
+// //             displayOut.innerHTML += 3;
+// //             secondNum += 3;
+// //     } 
+// // }
+// // function num4 () {
+// //     let displayOut = document.getElementById("display");
+// //     if (operator == "") {
+// //             displayOut.innerHTML += 4;
+// //             firstNum += 4;
+// //     }
+// //     else {
+// //             displayOut.innerHTML += 4;
+// //             secondNum += 4;
+// //     } 
+// // }
+// // function num5 () {
+// //     let displayOut = document.getElementById("display");
+// //     if (operator == "") {
+// //             displayOut.innerHTML += 5;
+// //             firstNum += 5;
+// //     }
+// //     else {
+// //             displayOut.innerHTML += 5;
+// //             secondNum += 5;
+// //     } 
+// // }
+// // function num6 () {
+// //     let displayOut = document.getElementById("display");
+// //     if (operator == "") {
+// //             displayOut.innerHTML += 6;
+// //             firstNum += 6;
+// //     }
+// //     else {
+// //             displayOut.innerHTML += 6;
+// //             secondNum += 6;
+// //     } 
+// // }
+// // function num7 () {
+// //     let displayOut = document.getElementById("display");
+// //     if (operator == "") {
+// //             displayOut.innerHTML += 7;
+// //             firstNum += 7;
+// //     }
+// //     else {
+// //             displayOut.innerHTML += 7;
+// //             secondNum += 7;
+// //     } 
+// // }
+// // function num8 () {
+// //     let displayOut = document.getElementById("display");
+// //     if (operator == "") {
+// //             displayOut.innerHTML += 8;
+// //             firstNum += 8;
+// //     }
+// //     else {
+// //             displayOut.innerHTML += 8;
+// //             secondNum += 8;
+// //     } 
+// // }
+// // function num9 () {
+// //     let displayOut = document.getElementById("display");
+// //     if (operator == "") {
+// //             displayOut.innerHTML += 9;
+// //             firstNum += 9;
+// //     }
+// //     else {
+// //             displayOut.innerHTML += 9;
+// //             secondNum += 9;
+// //     } 
+// // }
+// // function num0 () {
+// //     let displayOut = document.getElementById("display");
+// //     if (operator == "") {
+// //             displayOut.innerHTML += 0;
+// //             firstNum += 0;
+// //     }
+// //     else {
+// //             displayOut.innerHTML += 0;
+// //             secondNum += 0;
+// //     } 
+// // }
+
+// function clean () {
+//     let displayOut = document.getElementById("display");
+//         displayOut.innerHTML = "";
+//         firstNum = "";
+//         secondNum = "";
+//         operator = "";
+// }
+
+//      console.log(firstNum);
+//      console.log(secondNum);
+//      console.log(operator);
+
+// function equa () {
+//     let result = "";
+//     console.log(firstNum);
+//     console.log(secondNum);
+//     console.log(operator);
+
+//     if (operator == "+") {
+//              result = Number(firstNum) + Number(secondNum);
+//     }
+//     else {
+//         if (operator == "-") {
+//             result = Number(firstNum) - Number(secondNum);
+//         }
+//         else {
+//             if (operator == "*") {
+//                 result = Number(firstNum) * Number(secondNum);
+//             }
+//             else {
+//                 result = Number(firstNum) / Number(secondNum);
+//             }
+//         }
+//     }
+
+    
+//     console.log(result);
+
+//     document.getElementById("display").innerHTML =  result;
+
+// }
+
+
+</Script>
+</html>

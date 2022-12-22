@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: rgb(90, 15, 160);
+            padding: auto;
+            padding: 10px;
+            margin: auto;
+            margin: 10px 10px;
+        }
+        table{
+            background-color: rgb(142, 242, 102);
+            border-collapse: collapse;
+        }
+        th,tr {
+            height: 30px;
+            
+        }
+        td{
+            width: 170px;
+            border: 1px solid rebeccapurple;
+        }
+        .smallsuper { 
+            vertical-align: super;
+            font-size: smaller;
+        }
+    </style>
+</head>
+<body>
+    <!-- //Calculate The Area of Rectangle -->
+    <div>
+        <table>
+            <tr>
+                <td colspan="3" style="text-align: center;"><p style="font-weight:bold;">Calculate The Area of Rectangle</p></td>
+            </tr>
+            <tr>
+                <td><label for="width">Enter the width</label></td>
+                <td colspan="2">
+                    <input type="text" name="width" id="inputwidth">
+                    <select name="inputUnitWith" id="inputUnitWith">
+                            <option value="1">m(Metre)</option>
+                            <option value="2">dm(Decimetre)</option>
+                            <option value="3">cm(Centimetre)</option>
+                            <option value="4">mm(Millimetre)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="height">Enter the Height (m)</label></td>
+                <td colspan="2">
+                    <input type="text" name="height" id="inputheight">
+                    <select name="inputUnitHeight" id="inputUnitHeight">
+                        <option value="1">m(Metre)</option>
+                        <option value="2">dm(Decimetre)</option>
+                        <option value="3">cm(Centimetre)</option>
+                        <option value="4">mm(Millimetre)</option>
+                    </select>
+                    <!-- <input list="units" name="unit">
+                        <datalist id="units">
+                            <option value="In(Inch)">
+                            <option value="m(Metre)">
+                            <option value="cm(Centimetre)">
+                            <option value="mm(Millimetre)">
+                        </datalist> -->
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <button type="button" onclick="calculateAreaRectangle()">Click To Calculate</button>
+                </td>
+            </tr>
+            <tr>
+                <td><p>The Area of Rectangle:</p></td>
+                <td><p style="text-align: center;"><span style="color:red; font-weight: bold;" id="result">Kết quả ở đây</span></p></td>
+                <td>
+                    <select name="unit" id="outputUnitSquare" onchange="calculateAreaRectangle()">
+                        <option value="1">m² (Square Metre)</option>
+                        <option value="2">dm² (Square Decimetre)</option>
+                        <option value="3">cm² (Square Centimetre)</option>
+                        <option value="4">mm² (Square Millimetre)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<Script>
+    function calculateAreaRectangle () {
+        //bước 1: khai báo hai biến chứa giá trị của width và height do người dùng nhập vào
+        var input_Width = document.getElementById("inputwidth").value;
+        var input_Height = document.getElementById("inputheight").value;
+
+            console.log(input_Width);
+            console.log(input_Height);
+        
+        //bước 2: gán các giá trị về số đo do người dùng chọn cho các biến.
+
+        var input_UnitWith = +document.getElementById("inputUnitWith").value;
+        var input_UnitHeight = +document.getElementById("inputUnitHeight").value;
+        var output_UnitSquare = +document.getElementById("outputUnitSquare").value;
+
+            console.log(input_UnitWith);
+            console.log(input_UnitHeight);
+            console.log(output_UnitSquare);
+
+        //bước 3: Tạo biến trung gian để đưa các đơn vị đo lường về mét
+
+        var m_width = 1;
+        var m_height = 1;
+     
+        //bước 4: sử dụng hàm điều kiện để chuyển các số đo đầu vào về thành số đo đơn vị mét và gắn vào biến tạm đã khởi tạo
+                //bước 4 - step 1: Chuyển đơn vị cho inputWidth
+
+        if  (input_UnitWith == 1){
+            //kiểm tra có đúng là metre không? Nếu True gán luôn, False thì kiểm tra 3 giá trị còn lại (decimetre, centimetre, millinetre)
+            m_width = input_Width;
+        }
+        else{
+            //kiểm tra có đúng là decimetre không? Nếu True gán luôn, False thì kiểm tra tiếp 2 giá trị còn lại (centimetre, millimetre)
+            if (input_UnitWith == 2){
+                m_width = input_Width/10;
+            }
+            else{
+                //kiểm tra có đúng là centimetre không? Nếu True thì gán luôn, False thì gán cho giá trị còn lại (millimetre)
+                if(input_UnitWith == 3){
+                    m_width = input_Width/100;
+                }
+                else{
+                    m_width = input_Width/1000;
+                }
+            }
+        }
+
+                //bước 4 - step 2: Chuyển đơn vị cho inputHeight
+
+        if  (input_UnitHeight == 1){
+            //kiểm tra có đúng là metre không? Nếu True gán luôn, False thì kiểm tra 3 giá trị còn lại (decimetre, centimetre, millinetre)
+            m_height = input_Height;
+        }
+        else{
+            //kiểm tra có đúng là decimetre không? Nếu True gán luôn, False thì kiểm tra tiếp 2 giá trị còn lại (centimetre, millimetre)
+            if (input_UnitHeight == 2){
+                m_height = input_Height/10;
+            }
+            else{
+                //kiểm tra có đúng là centimetre không? Nếu True thì gán luôn, False thì gán cho giá trị còn lại (millimetre)
+                if(input_UnitHeight == 3){
+                    m_height = input_Height/100;
+                }
+                else{
+                    m_height = input_Height/1000;
+                }
+            }
+        }
+
+            console.log(m_width);
+            console.log(m_height);
+
+        //bước 3: khỏi tạo biến và gán diện tích hình chữ nhật với đơn vị là mét vuông; khởi tạo biến lưu kết quả dựa trên đơn vị đo lường diện tích người dùng chọn (id: outputUnitSquare)
+        var m_square_area = m_width * m_height;
+        var output_result = 1;
+
+            console.log(m_square_area);
+            console.log(output_result);
+        
+        //bước 4: Tính toán kết quả được in ra màn hình
+
+        if(output_UnitSquare == 1){
+            output_result = m_square_area;
+        }
+        else{
+            if(output_UnitSquare == 2){
+                output_result = m_square_area*100;
+            }
+            else{
+                if(output_UnitSquare == 3){
+                    output_result = m_square_area*10000;
+                }
+                else{
+                output_result = m_square_area*1000000;
+                }
+            }
+        }
+
+        console.log(output_result)
+        //bước 5: in kết quả ra màn hình trình duyệt
+    
+        document.getElementById("result").innerHTML = output_result
+
+    }
+</Script>
+</html>

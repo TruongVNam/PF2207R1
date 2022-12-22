@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div>
+        <form action="">
+            <h1>Giá Hoa Quả</h1>
+            <input type="text" name="hoaqua" id="hoaqua" placeholder="Nhập tên hoa quả" value="">
+            <input type="button" name="btsubmit" value="Xem giá" onclick="findPrice()">
+            <h1><span id="giahoaqua"></span></h1>
+        </form>
+    </div>
+    
+</body>
+<script>
+function findPrice () {
+
+    let hoaqua_in = document.getElementById("hoaqua").value;
+    let hoaqua = hoaqua_in.toLowerCase();
+    console.log(hoaqua);
+    switch (hoaqua) {
+
+        case "ổi":
+            document.getElementById("giahoaqua").innerHTML = "20000 VNĐ/kg";
+            break;
+
+        case "ổi":
+            document.getElementById("giahoaqua").innerHTML = "20000 VNĐ/kg";
+            break;
+
+        case "dưa hấu":
+            document.getElementById("giahoaqua").innerHTML = "20000 VNĐ/kg";
+            break;
+
+        case "táo":
+            document.getElementById("giahoaqua").innerHTML = "30000 VNĐ/kg";
+            break;
+
+        case "xoài":
+            document.getElementById("giahoaqua").innerHTML = "30000 VNĐ/kg";
+            break;
+
+        case "cam":
+            document.getElementById("giahoaqua").innerHTML = "40000 VNĐ/kg";
+            break;
+
+        case "chôm chôm":
+            document.getElementById("giahoaqua").innerHTML = "40000 VNĐ/kg";
+            break;
+
+        case "măng cụt":
+            document.getElementById("giahoaqua").innerHTML = "50000 VNĐ/kg";
+            break;
+
+        default:
+            document.getElementById("giahoaqua").innerHTML = "Not found";
+    }
+
+
+// Ổi: 20000 VNĐ/kg
+// Dưa Hấu: 20000 VNĐ/kg
+// Táo: 30000 VNĐ/kg
+// Xoài: 30000 VNĐ/kg
+// Cam: 40000 VNĐ/kg
+// Chôm Chôm: 40000 VNĐ/kg
+// Măng Cụt: 50000 VNĐ/kg
+
+}
+</script>
+</html>

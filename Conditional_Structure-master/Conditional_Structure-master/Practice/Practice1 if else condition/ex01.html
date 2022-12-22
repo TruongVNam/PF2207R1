@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>Question?</p>
+    <p>"What is the "oficial" name of JavaScript?"</p>
+    <p>Your Answer</p>
+    <input type="text" name="answer" id="answer" value="">
+    <input type="button" style="color:green;" value="Trả lời" onclick="calresult()">
+    <input type="button" style="color: red;" value="Reset" onclick="calReset()">
+    <p>Result</p>
+    <p><span id="result"></span></p>
+</body>
+<script>
+    function calresult() {
+        let answer = document.getElementById("answer").value;
+        if (answer == "ECMAScript") {
+            document.getElementById("result").innerHTML = "Right!";
+        } else {
+            document.getElementById("result").innerHTML = "You don't know? ECMAScript!";
+        }
+
+    }
+    
+    function calReset() {
+        document.getElementById("answer").value = "";
+        document.getElementById("result").innerHTML = "";
+    }
+    
+</script>
+</html>
